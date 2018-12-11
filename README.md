@@ -1,4 +1,4 @@
-## Curious in becoming part of the team?
+## Curious in becoming part of the team? (React Native)
 
 <hr/>
 
@@ -8,7 +8,14 @@
 
 
 ## Tools we use on the mobile app at lunchpool:
-Expo-Cli(react-native), react-navigation, NativeBase(simular to MaterialUI).
+1) Expo-Cli(react-native),
+2) ReactNavigation,
+3) NativeBase(simular to MaterialUI)
+  <br/>Nativebase was chosen because the docs had the best support:
+  <br/>a) https://docs.nativebase.io/Components.html#Components
+  <br/>Often it is more helpful to look at the open source for the NativeBase components:
+  <br/>b) https://github.com/GeekyAnts/NativeBase/tree/master/src/theme/components
+4) ReactNativeMaps
 
 ## Install Instructions:
 ```
@@ -30,5 +37,9 @@ git merge rename-app;
 ```
 
 ## Commands used, if interested:
-`npm uninstall -g expo-cli; npm install -g expo-cli; expo init lunchpool_mobile_onboarding; cd lunchpool_mobile_onboarding;`
+```
+npm uninstall -g expo-cli; npm install -g expo-cli; expo init lunchpool_mobile_onboarding; cd lunchpool_mobile_onboarding;
+npm install --save react-native-maps;
+```
+
 
