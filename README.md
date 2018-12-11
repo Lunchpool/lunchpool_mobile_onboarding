@@ -28,3 +28,7 @@ react-native-rename your_app_name_here;
 git checkout master;
 git merge rename-app;
 ```
+
+## Commands used, if interested:
+`npm uninstall -g expo-cli; npm install -g expo-cli; expo init lunchpool_mobile_onboarding; cd lunchpool_mobile_onboarding;`
+
