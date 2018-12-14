@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StatusBar, Image, StyleSheet, View } from 'react-native';
+import { SafeAreaView, Platform, StatusBar, Image, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 import { Header, Left, Right, Body } from 'native-base';
@@ -20,7 +20,7 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
            <Header style={{ backgroundColor: '#ffffff', borderBottomColor: "#f65857", borderBottomWidth:2}} >
              <Left>
              </Left>
@@ -40,7 +40,7 @@ export default class App extends React.Component {
            </Header>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           <AppNavigator />
-        </View>
+        </SafeAreaView>
       );
     }
   }
