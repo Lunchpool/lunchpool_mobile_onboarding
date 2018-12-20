@@ -13,3 +13,18 @@ sdkmanager "platform-tools" "platforms;android-27" "extras;intel;Hardware_Accele
 avdmanager create avd -n test -k "system-images;android-27;google_apis;x86"
 /usr/local/share/android-sdk/emulator/emulator -avd test
 ```
+
+## Simpler ways to run an android app.
+```
+# If you do not want to install the full android studio,
+# download android bridge device (abd) for usb debug enabled android phones:
+
+brew install abd
+
+# Otherwise download android studio:
+
+brew cask install android studio
+```
+
+## Iphone emulator...
+Download Xcode from the app store...
