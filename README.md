@@ -6,7 +6,6 @@
 
 <hr/>
 
-
 ## Tools we use on the mobile app at lunchpool:
 1) Expo-Cli(react-native),
 2) ReactNavigation,
@@ -45,16 +44,16 @@ npm install --save react-native-maps;
 ## Deploy to the app store:
 
 ```bash
-# remove old ipa and apk app's
-rm lunchpool_mobile_onboarding-* &&
+# build a new ipa or apk
+npm run rebuildios
+npm run rebuildandroid
 
-# generate new ipa and apk app's via bash script
-expo build: ios &&
-expo build: android &&
-apkUrl=$(expo build:status | grep APK | cut -c 17- | head -1) &&
-ipaUrl=$(expo build:status | grep IPA | cut -c 17- | head -1) &&
-curl -O $apkUrl;curl -O $ipaUrl;
+# Test quickly on android phone using usb-debug mode: ensure abd is installed (brew install abd)
+npm run rebuild android apk; npm run usbAndroid
+```
 
+## Run on an Android device connected via usb
+```
 # If your phone is connected to the computer and emulator has been installed,
 # make sure your phone is in usb-debug mode... google for your phone if unsure.
 brew install abd
@@ -63,19 +62,6 @@ adb -s <device name> install <apk signiture>
 ```
 
 
-## (Not required, getting android emulator setup on mac computer):
-```bash
-# https://gist.github.com/spilth/e7385e7f5153f76cca40a192be35f4ba
-touch ~/.android/repositories.cfg
-brew cask install caskroom/versions/java8
-brew cask install android-sdk
-brew cask install intel-haxm
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk/emulator/emulator"
-sdkmanager "platform-tools" "platforms;android-27" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;27.0.0" "system-images;android-27;google_apis;x86" "emulator"
-
-avdmanager create avd -n test -k "system-images;android-27;google_apis;x86"
-/usr/local/share/android-sdk/emulator/emulator -avd test
-
-adb -s 89NX0C6YN install <apk signiture>
-```
+## Additional Emulator Instructions:
+[additional emulator instructions](AdditionalEmulatorInstructions.md)
 

@@ -4,6 +4,19 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "commands": "npm run rebuild ios ipa; npm run rebuild android apk; npm run binaryios; npm run binaryandroid; npm run usbAndroid;",
+    "rebuildios": "npm run rebuild ios ipa;",
+    "rebuildandroid": "npm run rebuild android apk;",
+    "rebuild": "run(){ rm lunchpool_mobile_onboarding-*.$2; expo build:$1; npm run binary$1; }; run",
+
+    "binaryios": "npm run binary ipa",
+    "binaryandroid": "npm run binary apk",
+    "binary": "run(){ rm lunchpool_mobile_onboarding-*.$1; curl -O $(npm run -s url $1); }; run",
+
+    "usbAndroid": "adb -s $(npm run -s device) install $(npm run -s url apk) || echo 'no device found, check usb debugging, or apk file exists';",
+    "usbIphone": "",
+
+
     "eject": "expo eject",
     "test": "node ./node_modules/jest/bin/jest.js --watchAll"
   },
