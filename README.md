@@ -24,23 +24,6 @@ npm install;
 npm start;
 ```
 
-## Additional Instruction if interested in building a different application:
-```
-npm install react-native-rename -g;
-git checkout -b rename-app;
-react-native-rename your_app_name_here;
-
-# if everything looks good move it to master branch
-git checkout master;
-git merge rename-app;
-```
-
-## Commands used for this project, if interested:
-```
-npm uninstall -g expo-cli; npm install -g expo-cli; expo init lunchpool_mobile_onboarding; cd lunchpool_mobile_onboarding;
-npm install --save react-native-maps;
-```
-
 ## Deploy to the app store:
 
 ```bash
@@ -61,7 +44,24 @@ adb -s <device name> install <apk signiture>
 # example: adb -s 89NX0C6YN install lunchpool_mobile_onboarding-7988607a3ef444e6b9487bc371aff7b1-signed.apk
 ```
 
+## Rename App to use for your purposes!
+```
+npm install react-native-rename -g;
+git checkout -b rename-app;
+react-native-rename your_app_name_here;
+
+# if everything looks good move it to master branch
+git checkout master;
+git merge rename-app;
+```
 
 ## Additional Emulator Instructions:
 [additional emulator instructions](AdditionalEmulatorInstructions.md)
 
+## Commands used for this project, if interested:
+```bash
+npm uninstall -g expo-cli; npm install -g expo-cli; expo init lunchpool_mobile_onboarding; cd lunchpool_mobile_onboarding;
+npm install --save react-native-maps;
+```
+npm scripts:
+<br/>Also include the package.json scripts [link](package.json)
