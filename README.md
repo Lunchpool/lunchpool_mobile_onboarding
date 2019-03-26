@@ -39,7 +39,8 @@ npm run rebuild android apk; npm run usbAndroid
 ```
 # If your phone is connected to the computer and emulator has been installed,
 # make sure your phone is in usb-debug mode... google for your phone if unsure.
-brew install abd
+# https://stackoverflow.com/a/32314718/5283424
+brew install homebrew/cask/android-platform-tools
 adb -s <device name> install <apk signiture>
 # example: adb -s 89NX0C6YN install lunchpool_mobile_onboarding-7988607a3ef444e6b9487bc371aff7b1-signed.apk
 ```
