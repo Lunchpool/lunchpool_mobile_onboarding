@@ -1,24 +1,32 @@
 {
   "main": "node_modules/expo/AppEntry.js",
+  "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "commands": "npm run rebuild ios ipa; npm run rebuild android apk; npm run binaryios; npm run binaryandroid; npm run usbAndroid;",
-    "rebuildios": "npm run rebuild ios ipa;",
-    "rebuildandroid": "npm run rebuild android apk;",
-    "rebuild": "run(){ rm lunchpool_mobile_onboarding-*.$2; expo build:$1; npm run binary$1; }; run",
+    "buildios": "npm run rebuild ios ipa;",
+    "buildandroid": "npm run rebuild android apk;",
+    "rebuild": "run(){ rm lunchpool_mobile_onboarding-*.$2; expo build:$1 && npm run downloadbinary$1; }; run",
 
-    "binaryios": "npm run binary ipa",
-    "binaryandroid": "npm run binary apk",
+    "downloadbinaryios": "npm run binary ipa",
+    "downloadbinaryandroid": "npm run binary apk",
     "binary": "run(){ rm lunchpool_mobile_onboarding-*.$1; curl -O $(npm run -s url $1); }; run",
 
-    "usbAndroid": "adb -s $(npm run -s device) install $(npm run -s url apk) || echo 'no device found, check usb debugging, or apk file exists';",
-    "usbIphone": "",
-
+    "//": "the url function may need to change based on project name",
+    "url": "run(){ expo build:status | grep $1 | cut -c 6- | head -1; }; run",
 
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+
+    "//": "android bridge device section; requires abd",
+    "device": "adb devices | HEAD -2 | TAIL -1 | awk '{print $1;}'",
+    "usbAndroid": "adb -s $(npm run -s device) install *.apk || echo 'no device found, check usb debugging, or apk file exists';",
+    "usbIphone": "",
+
+    "//": "included for documentation purposes",
+    "mainCommands": "exit 1 && npm run buildios; npm run buildandroid; npm run usbAndroid;",
+    "commandsWithExampleInputs": "exit 1 && npm run rebuild ios ipa; npm run rebuild android apk; npm run binary ipa; npm run binary apk; npm run -s url apk; npm run -s url ipa; npm run device;"
   },
   "jest": {
     "preset": "jest-expo"
@@ -35,6 +43,5 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "jest-expo": "^31.0.0"
-  },
-  "private": true
+  }
 }
