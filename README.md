@@ -19,8 +19,9 @@
 ## Install Instructions:
 ```
 git clone https://github.com/Lunchpool/lunchpool_mobile_onboarding.git;
-cd lunchpool_mobile_onboarding;
-npm install;
+cd lunchpool-mobile_onboarding &&
+npm install -g expo-cli &&
+npm install &&
 npm start;
 ```
 
@@ -31,8 +32,11 @@ npm start;
 npm run rebuildios
 npm run rebuildandroid
 
-# Test quickly on android phone using usb-debug mode: ensure abd is installed (brew install abd)
-npm run rebuild android apk; npm run usbAndroid
+# now you can move the apk file to the playstore and your set.
+# apple has a little more difficulty ... you need to use itunes connect.
+# two helpful links for apple app store below:
+# https://medium.com/@the_manifest/how-to-publish-your-app-on-apples-app-store-in-2018-f76f22a5c33a
+# https://appstoreconnect.apple.com/
 ```
 
 ## Run on an Android device connected via usb
@@ -41,8 +45,12 @@ npm run rebuild android apk; npm run usbAndroid
 # make sure your phone is in usb-debug mode... google for your phone if unsure.
 # https://stackoverflow.com/a/32314718/5283424
 brew install homebrew/cask/android-platform-tools
-adb -s <device name> install <apk signiture>
-# example: adb -s 89NX0C6YN install lunchpool_mobile_onboarding-7988607a3ef444e6b9487bc371aff7b1-signed.apk
+
+# Test quickly on android phone using usb-debug mode: ensure abd is installed (brew install abd)
+npm run buildandroid; npm run usbAndroid;
+
+# If you have already built and sent to expo you can test on an android phone even faster:
+npm run downloadbinaryandroid; npm run usbAndroid;
 ```
 
 ## Rename App to use for your purposes!
