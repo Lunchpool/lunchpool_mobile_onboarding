@@ -29,8 +29,8 @@ npm start;
 
 ```bash
 # build a new ipa or apk
-npm run rebuildios
-npm run rebuildandroid
+npm run buildios
+npm run buildandroid
 
 # now you can move the apk file to the playstore and your set.
 # apple has a little more difficulty ... you need to use itunes connect.
