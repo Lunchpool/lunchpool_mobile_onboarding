@@ -20,7 +20,7 @@
 ```
 {
 git clone https://github.com/Lunchpool/lunchpool_mobile_onboarding.git;
-cd lunchpool-mobile_onboarding &&
+cd lunchpool_mobile_onboarding &&
 npm install -g expo-cli &&
 npm install &&
 npm start;
