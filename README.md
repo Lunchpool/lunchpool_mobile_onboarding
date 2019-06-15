@@ -18,11 +18,13 @@
 
 ## Install Instructions:
 ```
+{
 git clone https://github.com/Lunchpool/lunchpool_mobile_onboarding.git;
 cd lunchpool-mobile_onboarding &&
 npm install -g expo-cli &&
 npm install &&
 npm start;
+}
 ```
 
 ## Deploy to the app store:
