@@ -21,7 +21,7 @@
 {
 git clone https://github.com/Lunchpool/lunchpool_mobile_onboarding.git;
 cd lunchpool_mobile_onboarding &&
-npm install -g expo-cli &&
+npm install -g expo-cli;
 npm install &&
 npm start;
 }
@@ -31,8 +31,8 @@ npm start;
 
 ```bash
 # build a new ipa or apk
-npm run buildios
-npm run buildandroid
+npm run buildios;
+npm run buildandroid;
 
 # now you can move the apk file to the playstore and your set.
 # apple has a little more difficulty ... you need to use itunes connect.
