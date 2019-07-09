@@ -56,6 +56,14 @@ npm run downloadbinaryandroid; npm run usbAndroid;
 ```
 
 ## Rename App to use for your purposes!
+
+change the app.json to have your own company name:
+```
+    "android": {
+      "package": "com.yourcompany.yourappname"
+    },
+```
+
 ```
 npm install react-native-rename -g;
 git checkout -b rename-app;
